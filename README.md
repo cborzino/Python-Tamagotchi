@@ -47,31 +47,87 @@ The minigame menu only shows the games that have been implemented — students u
 
 ## 📁 Project structure
 
-```
-tamagotchi/
-├── animais.py                        # ASCII art for all animals + color codes
-├── emojis.py                         # Emoji constants used throughout the game
-├── tamagotchi_para_completar.py      # Main file — students paste everything here at the end
-│
-├── parte_1_personalizacao.py         # Step 1: name, animal, color and emoji choices
-├── parte_2_printa_animal_e_status.py # Step 2: display functions
-├── parte_3_barra_energia_e_dinheiro.py # Step 3: energy and money bar logic
-├── parte_4_dormir_e_comer.py         # Step 4: sleep and eat functions
-│
-├── jogo_1_pedra_papel_tesoura.py     # Minigame 1: Rock, Paper, Scissors
-├── jogo_2_ppt_turbinado.py           # Minigame 2: Rock, Paper, Scissors, Lizard, Spock
-├── jogo_3_apostas.py                 # Minigame 3: Dice guessing game
-├── jogo_4_velha.py                   # Minigame 4: Tic-tac-toe
-│
-└── parte_6_menus.py                  # Step 6: main menu + dynamic game menu
+The repository is organized into four groups of files, each serving a different purpose during the learning process.
+
+### Core files
+
+These files contain the shared resources and the complete version of the project.
+
+```text
+animais.py
+emojis.py
+tamagotchi.py
 ```
 
-Each individual file (`parte_X` and `jogo_X`) contains:
-- A **header** with pre-filled example variables so the file runs on its own.
-- The **function(s) to be completed**, with `{COMPLETE AQUI!!}` placeholders identical to the ones in the main file.
-- A **test block** at the end that runs automatically, so students can verify their work before moving on.
+* `animais.py` contains all ASCII-art animals and terminal color definitions.
+* `emojis.py` contains the emoji constants used throughout the game.
+* `tamagotchi.py` is the complete reference implementation of the project.
 
 ---
+
+### Guided exercises (`material/`)
+
+The files in the `material/` folder are the main learning activities. Each one introduces a new programming concept and asks students to complete specific sections marked with `{COMPLETE AQUI!!}`.
+
+```text
+material/
+├── parte_1_personalizacao.py
+├── parte_2_printa_animal_e_status.py
+├── parte_3_barra_energia_e_dinheiro.py
+├── parte_4_dormir_e_comer.py
+├── parte_6_menus.py
+└── tamagotchi_para_completar.py
+```
+
+The recommended order is:
+
+1. Personalize the pet.
+2. Display the pet and status information.
+3. Implement the attribute bars.
+4. Implement sleeping and eating mechanics.
+5. Add minigames.
+6. Build the final menu system.
+7. Assemble everything in `tamagotchi_para_completar.py`.
+
+---
+
+### Minigames (`jogos/`)
+
+Each minigame is provided in its own file so that students can implement and test it independently.
+
+```text
+jogos/
+├── jogo_1_pedra_papel_tesoura.py
+├── jogo_2_ppt_turbinado.py
+├── jogo_3_apostas.py
+└── jogo_4_velha.py
+```
+
+Students can complete the games in any order and later integrate them into the main menu.
+
+---
+
+### Documentation (`docs/`)
+
+```text
+docs/
+└── LEIA_ME.md
+```
+
+Additional documentation and instructor notes can be stored here.
+
+---
+
+### File design philosophy
+
+Each exercise file (`parte_X`) and each minigame file (`jogo_X`) is intentionally self-contained:
+
+* A header provides example variables so the file can run independently.
+* Only a small portion of the code is left incomplete.
+* Test code at the bottom executes automatically.
+* The same placeholders appear in `tamagotchi_para_completar.py`, making final integration a simple copy-and-paste process.
+
+This structure allows students to focus on one concept at a time while continuously testing their progress.
 
 ## 🚀 How to use
 
@@ -83,7 +139,7 @@ Each individual file (`parte_X` and `jogo_X`) contains:
 ### Running the complete game
 
 ```bash
-python tamagotchi_para_completar.py
+python tamagotchi.py
 ```
 
 ### Suggested workflow for students
@@ -137,5 +193,5 @@ The exercises cover the following Python fundamentals, introduced gradually acro
 
 - The red squiggly lines that appear in VS Code on `{COMPLETE AQUI!!}` placeholders are expected — they are caused by Pylance trying to parse the placeholders as Python expressions. They disappear as soon as the placeholder is replaced with valid code.
 - Each individual file has a header with example variables (e.g. `nome = "Caramelo"`). Students should replace these with their own variables from Part 1 when pasting into the main file.
-- `animais.py` and `emojis.py` must be in the same folder as all other files for the imports to work.
+* `animais.py` and `emojis.py` are imported by the complete Tamagotchi implementation and should remain alongside `tamagotchi.py`. If the folder structure is modified, import statements may need to be updated accordingly.
 - Minigame 4 (Tic-tac-toe) is significantly harder than the others due to list indexing and nested functions.
