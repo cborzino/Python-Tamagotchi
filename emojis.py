@@ -23,13 +23,3 @@ raio = "\N{high voltage sign}"            # ⚡
 
 zzz = "\N{sleeping symbol}"              # 💤
 
-moedas = "minhas moedas: "
-
-for i in range(10):
-    moedas += pizza
-
-# print(list)
-#print("  ".join(list)) 
-print(moedas)
-
-print(unicodedata.name("🍕"))
